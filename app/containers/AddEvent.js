@@ -1,26 +1,23 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { addEvent } from '../actions'
+import AddEventForm from '../components/AddEventForm'
 
-let AddEvent = ({ dispatch }) => {
+const AddEvent = ({ dispatch }) => {
   return (
     <div className='AddEvent'>
-      <form onSubmit={(e) => {
-        e.preventDefault()
-        dispatch(addEvent())
-      }}>
-        <input placeholder={'Event Name'} type='text' />
-        <input placeholder={'Event Description'} type='text' />
-        <input placeholder={'Start Date/Time'} type='text' />
-        <input placeholder={'End Date/Time'} type='text' />
-        <input placeholder={'Tags'} type='text' />
-        <input placeholder={'Photo'} type='text' />
-        <input type='submit' value='Add Event' />
-      </form>
+      <AddEventForm onSubmit={(values) => {
+        dispatch(addEvent(
+          values.name,
+          values.dateBegin,
+          values.dateEnd,
+          values.description,
+          [values.tags],
+          values.photo
+        ))
+      }} />
     </div>
   )
 }
 
-AddEvent = connect()(AddEvent)
-
-export default AddEvent
+export default connect()(AddEvent)
