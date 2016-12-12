@@ -10,7 +10,7 @@ const Event = ({ name, dateBegin, dateEnd, description, tags, photo }) =>
     <p className='description'>
       {description}
     </p>
-    <h4>Tagged></h4>
+    <h4>Tagged</h4>
     <ul className='tags'>
       {tags.length
         ? tags.map((t, i) => <li key={i}>{t}</li>)

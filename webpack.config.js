@@ -34,7 +34,7 @@ const common = merge(
     }
   },
   parts.indexTemplate({
-    title: 'Code 501 React Boilerplate',
+    title: 'Event Calendar Redux',
     appMountId: 'app'
   }),
   parts.loadJSX(PATHS.app),
