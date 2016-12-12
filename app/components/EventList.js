@@ -23,4 +23,4 @@ const propTypes = {
   }).isRequired).isRequired
 }
 
-export default Object.assign(EventList, propTypes)
+export default Object.assign(EventList, { propTypes })

@@ -29,4 +29,4 @@ const propTypes = {
   photo: PropTypes.string
 }
 
-export default Object.assign(Event, propTypes)
+export default Object.assign(Event, { propTypes })
