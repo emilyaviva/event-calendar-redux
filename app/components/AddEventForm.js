@@ -12,7 +12,7 @@ const AddEventForm = ({ handleSubmit }) =>
     <div>
       <label>Event Description</label>
       <div>
-        <Field name='description' component='input' type='text' placeholder='Description' />
+        <Field name='description' component='textarea' type='text' placeholder='Description' />
       </div>
     </div>
     <div>

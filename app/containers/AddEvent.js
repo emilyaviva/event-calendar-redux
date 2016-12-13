@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { reset } from 'redux-form'
 import { addEvent } from '../actions'
 import AddEventForm from '../components/AddEventForm'
 
@@ -15,6 +16,7 @@ const AddEvent = ({ dispatch }) => {
           [values.tags],
           values.photo
         ))
+        dispatch(reset('AddEventForm'))
       }} />
     </div>
   )
