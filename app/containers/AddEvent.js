@@ -13,7 +13,7 @@ const AddEvent = ({ dispatch }) => {
           values.dateBegin,
           values.dateEnd,
           values.description,
-          [values.tags],
+          values.tags.split(','),
           values.photo
         ))
         dispatch(reset('AddEventForm'))
