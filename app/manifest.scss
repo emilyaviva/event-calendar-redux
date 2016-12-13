@@ -1,7 +1,31 @@
 body {
   background: lavender;
+  font-family: Helvetica, Arial, sans-serif;
 }
 
 .Event {
-  border-bottom: 1px solid black;
+  background: #fbfbfb;
+  margin: 10px;
+  padding: 4px 10px;
+  h3 {
+    text-align: center;
+  }
+  .times {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .description {
+
+  }
+  .tags {
+    display: inline;
+    ul {
+      display: inline-block;
+      li {
+        display: inline;
+        padding-right: 5px;
+      }
+    }
+  }
 }
