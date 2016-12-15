@@ -8,12 +8,6 @@ class calendarAPI {
       .then(res => res.json())
       .catch(err => err)
   }
-
-  static createNewEvent () {
-    return fetch(url, { method: 'post' })
-      .then(res => res.json())
-      .catch(err => err)
-  }
 }
 
 export default calendarAPI
