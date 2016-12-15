@@ -18,6 +18,8 @@ const event = (state = {}, action) => {
 
 const events = (state = [], action) => {
   switch (action.type) {
+    case 'LOAD_EVENTS_SUCCESS':
+      return action.events
     case 'ADD_EVENT':
       return [
         ...state,

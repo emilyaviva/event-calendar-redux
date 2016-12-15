@@ -17,11 +17,18 @@
     "test:tdd": "npm run test -- --auto-watch --no-single-run"
   },
   "dependencies": {
+    "axios": "^0.15.3",
+    "body-parser": "^1.15.2",
+    "es6-promise": "^4.0.5",
+    "express": "^4.14.0",
+    "isomorphic-fetch": "^2.2.1",
+    "mongodb": "^2.2.16",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
     "react-redux": "^4.4.6",
     "redux": "^3.6.0",
     "redux-form": "^6.3.2",
+    "redux-thunk": "^2.1.0",
     "uuid": "^3.0.1"
   },
   "devDependencies": {

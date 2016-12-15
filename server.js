@@ -12,6 +12,7 @@ app.get('/calendar', function (req, res) {
     if (err) {
       return console.error(err)
     }
+    console.log('A GET request was sent.')
     res.json(result)
   })
 })

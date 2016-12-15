@@ -1,4 +1,5 @@
 import uuid from 'uuid'
+import calendarAPI from '../api/calendarAPI'
 
 export const addEvent = (name, dateBegin, dateEnd, description, tags, photo, food) => {
   return {
@@ -18,5 +19,22 @@ export const toggleFood = (toggle) => {
   return {
     type: 'TOGGLE_FOOD',
     toggle
+  }
+}
+
+export const loadEvents = () => {
+  return function (dispatch) {
+    return calendarAPI.getAllEvents().then((events) => {
+      dispatch(loadEventsSuccess(events))
+    }).catch((error) => {
+      throw error
+    })
+  }
+}
+
+export const loadEventsSuccess = (events) => {
+  return {
+    type: 'LOAD_EVENTS_SUCCESS',
+    events
   }
 }
