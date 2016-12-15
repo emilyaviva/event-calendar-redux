@@ -8,7 +8,8 @@ const event = (state = {}, action) => {
         dateBegin: action.dateBegin,
         dateEnd: action.dateEnd,
         photo: action.photo || '',
-        tags: action.tags || []
+        tags: action.tags || [],
+        food: action.food || false
       }
     default:
       return state

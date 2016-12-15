@@ -19,7 +19,8 @@ const propTypes = {
     dateEnd: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     tags: PropTypes.array,
-    photo: PropTypes.string
+    photo: PropTypes.string,
+    food: PropTypes.bool
   }).isRequired).isRequired
 }
 

@@ -39,6 +39,10 @@ const AddEventForm = ({ handleSubmit }) =>
         <Field name='photo' component='input' type='text' placeholder='Photo' />
       </div>
     </div>
+    <div>
+      <label>Is Food Provided?</label>
+      <Field name='food' component='input' type='checkbox' />
+    </div>
     <input type='submit' value='Add Event' />
   </form>
 

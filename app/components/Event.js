@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 
-const Event = ({ name, dateBegin, dateEnd, description, tags, photo }) =>
+const Event = ({ name, dateBegin, dateEnd, description, tags, photo, food }) =>
   <div className='Event'>
     <h3>{name}</h3>
     <div className='times'>
@@ -10,6 +10,7 @@ const Event = ({ name, dateBegin, dateEnd, description, tags, photo }) =>
     <p className='description'>
       {description}
     </p>
+    <p>Food will {food ? null : 'not'} be provided.</p>
     <div className='tags'>
       <span className='tags-header'>Tags</span>
       <ul>
@@ -28,7 +29,8 @@ const propTypes = {
   dateEnd: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   tags: PropTypes.array,
-  photo: PropTypes.string
+  photo: PropTypes.string,
+  food: PropTypes.bool
 }
 
 export default Object.assign(Event, { propTypes })

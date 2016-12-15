@@ -14,7 +14,8 @@ const AddEvent = ({ dispatch }) => {
           values.dateEnd,
           values.description,
           values.tags.split(','),
-          values.photo
+          values.photo,
+          values.food
         ))
         dispatch(reset('AddEventForm'))
       }} />

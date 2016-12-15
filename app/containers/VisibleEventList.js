@@ -2,7 +2,11 @@ import { connect } from 'react-redux'
 import EventList from '../components/EventList'
 
 const getVisibleEvents = (events, filter) => {
-  switch (filter) {
+  switch (filter.showOnlyFood) {
+    case true:
+      return events.filter((event) => event.food)
+    case false:
+      return events
     default:
       return events
   }
