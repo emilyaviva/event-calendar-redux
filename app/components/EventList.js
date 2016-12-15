@@ -5,7 +5,7 @@ const EventList = ({ events }) =>
   <main className='EventList'>
     {events.map((event) =>
       <Event
-        key={event.id}
+        key={event._id}
         {...event}
       />
     )}
@@ -13,7 +13,7 @@ const EventList = ({ events }) =>
 
 const propTypes = {
   events: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.string.isRequired,
+    _id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     dateBegin: PropTypes.string.isRequired,
     dateEnd: PropTypes.string.isRequired,
