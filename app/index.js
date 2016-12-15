@@ -3,14 +3,16 @@ import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import { createStore, applyMiddleware } from 'redux'
 import ReduxThunk from 'redux-thunk'
+import { composeWithDevTools } from 'redux-devtools-extension'
 import eventsCalendar from './reducers'
 import App from './components/App'
 import { loadEvents } from './actions'
 
 const store = createStore(
   eventsCalendar,
-  applyMiddleware(ReduxThunk),
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  composeWithDevTools(
+    applyMiddleware(ReduxThunk)
+  )
 )
 
 store.dispatch(loadEvents())
