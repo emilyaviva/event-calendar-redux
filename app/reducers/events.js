@@ -1,8 +1,8 @@
 const event = (state = {}, action) => {
   switch (action.type) {
-    case 'ADD_EVENT':
+    case 'CREATE_NEW_EVENT_SUCCESS':
       return {
-        id: action.id,
+        _id: action._id || 1,
         name: action.name,
         description: action.description,
         dateBegin: action.dateBegin,
@@ -18,7 +18,11 @@ const event = (state = {}, action) => {
 
 const events = (state = [], action) => {
   switch (action.type) {
-    case 'ADD_EVENT':
+    case 'LOAD_EVENTS_SUCCESS':
+      return action.events
+    case 'CREATE_NEW_EVENT_SUCCESS':
+      // Creating a new event updates the local store of events, thus
+      // avoiding having to run a second Ajax request to get all events.
       return [
         ...state,
         event(undefined, action)
