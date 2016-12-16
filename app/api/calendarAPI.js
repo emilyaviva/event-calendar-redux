@@ -12,7 +12,11 @@ class calendarAPI {
   static createNewEvent (event) {
     return fetch(url, {
       method: 'post',
-      body: event
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(event)
     }).then(res => res.json())
       .catch(err => err)
   }
