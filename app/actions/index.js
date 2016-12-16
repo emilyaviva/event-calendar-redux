@@ -27,16 +27,25 @@ export const loadEventsSuccess = (events) => {
 export const createNewEvent = (event) => {
   return function (dispatch) {
     return calendarAPI.createNewEvent(event).then((response) => {
-      dispatch(createNewEventSuccess(response))
+      // Pass the new event and its ID from the server to the next action
+      dispatch(createNewEventSuccess(event, response._id))
     }).catch((error) => {
       throw error
     })
   }
 }
 
-export const createNewEventSuccess = (event) => {
+export const createNewEventSuccess = (event, newId) => {
   return {
+    // Insert the newly created event into the local state
     type: 'CREATE_NEW_EVENT_SUCCESS',
-    event
+    _id: newId,
+    name: event.name,
+    dateBegin: event.dateBegin,
+    dateEnd: event.dateEnd,
+    description: event.description,
+    tags: event.tags || [],
+    photo: event.photo || '',
+    food: event.food || false
   }
 }
