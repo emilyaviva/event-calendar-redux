@@ -24,12 +24,11 @@
     "mongodb": "^2.2.16",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
-    "react-redux": "^4.4.6",
+    "react-redux": "^5.0.1",
     "redux": "^3.6.0",
     "redux-devtools-extension": "^1.0.0",
     "redux-form": "^6.3.2",
-    "redux-thunk": "^2.1.0",
-    "uuid": "^3.0.1"
+    "redux-thunk": "^2.1.0"
   },
   "devDependencies": {
     "babel-core": "^6.20.0",
@@ -45,7 +44,7 @@
     "html-webpack-template": "^5.5.0",
     "node-sass": "^4.0.0",
     "npm-install-webpack-plugin": "^4.0.4",
-    "sass-loader": "^4.0.2",
+    "sass-loader": "^4.1.0",
     "standard": "^8.6.0",
     "standard-loader": "^5.0.0",
     "style-loader": "^0.13.1",

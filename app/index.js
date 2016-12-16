@@ -8,6 +8,8 @@ import eventsCalendar from './reducers'
 import App from './components/App'
 import { loadEvents } from './actions'
 
+// composeWithDevTools enables the Chrome Redux extension
+// ReduxThunk enables actions that dispatch other actions
 const store = createStore(
   eventsCalendar,
   composeWithDevTools(
@@ -15,6 +17,7 @@ const store = createStore(
   )
 )
 
+// on app start, get all events that exist
 store.dispatch(loadEvents())
 
 const wrappedApp = (

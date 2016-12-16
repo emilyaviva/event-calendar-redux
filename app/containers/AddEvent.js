@@ -1,14 +1,14 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { reset } from 'redux-form'
-import { addEvent } from '../actions'
+import { createNewEvent } from '../actions'
 import AddEventForm from '../components/AddEventForm'
 
 const AddEvent = ({ dispatch }) => {
   return (
     <div className='AddEvent'>
       <AddEventForm onSubmit={(values) => {
-        dispatch(addEvent(
+        dispatch(createNewEvent(
           values.name,
           values.dateBegin,
           values.dateEnd,
