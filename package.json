@@ -17,7 +17,6 @@
     "test:tdd": "npm run test -- --auto-watch --no-single-run"
   },
   "dependencies": {
-    "axios": "^0.15.3",
     "body-parser": "^1.15.2",
     "es6-promise": "^4.0.5",
     "express": "^4.14.0",
