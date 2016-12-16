@@ -4,7 +4,7 @@ import calendarAPI from '../api/calendarAPI'
 export const addEvent = (name, dateBegin, dateEnd, description, tags, photo, food) => {
   return {
     type: 'ADD_EVENT',
-    id: uuid.v4(),
+    _id: uuid.v4(),
     name,
     dateBegin,
     dateEnd,
