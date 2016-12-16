@@ -7,7 +7,7 @@
     "email": "emily@emilyaviva.com",
     "url": "https://www.emilyaviva.com/"
   },
-  "license": "MIT",
+  "license": "ISC",
   "scripts": {
     "stats": "webpack --profile --json > stats.json",
     "start": "webpack-dev-server",
