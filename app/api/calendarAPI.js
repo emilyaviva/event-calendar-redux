@@ -20,6 +20,13 @@ class calendarAPI {
     }).then(res => res.json())
       .catch(err => err)
   }
+
+  static deleteEvent (id) {
+    return fetch(`${url}/${id}`, {
+      method: 'delete'
+    }).then(res => res.json())
+      .catch(err => err)
+  }
 }
 
 export default calendarAPI

@@ -1,6 +1,7 @@
 var express = require('express')
 var bodyParser = require('body-parser')
 var MongoClient = require('mongodb').MongoClient
+var ObjectID = require('mongodb').ObjectID
 
 var app = express()
 var db
@@ -15,6 +16,7 @@ app.use(bodyParser.json())
 app.use(function (req, res, next) {
   res.header('Access-Control-Allow-Origin', '*')
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE')
   next()
 })
 
@@ -32,11 +34,21 @@ app.get('/calendar', function (req, res) {
 app.post('/calendar', function (req, res) {
   db.collection('events').insertOne(req.body, function (err, result) {
     if (err) {
-      return console.log(err)
+      return console.error(err)
     }
     console.log('saved new event ' + req.body.name + ' to database')
     // Send the client a success message including the new event's ID
     res.json({ success: true, _id: result.insertedId })
+  })
+})
+
+app.delete('/calendar/:id', function (req, res) {
+  db.collection('events').findOneAndDelete({ _id: ObjectID(req.params.id) }, function (err, result) {
+    if (err) {
+      return console.error(err)
+    }
+    console.log('deleted event id ' + req.params.id)
+    res.json(result)
   })
 })
 

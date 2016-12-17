@@ -49,3 +49,20 @@ export const createNewEventSuccess = (event, newId) => {
     food: event.food || false
   }
 }
+
+export const deleteEvent = (id) => {
+  return function (dispatch) {
+    return calendarAPI.deleteEvent(id).then((response) => {
+      dispatch(deleteEventSuccess(id))
+    }).catch((error) => {
+      throw error
+    })
+  }
+}
+
+export const deleteEventSuccess = (id) => {
+  return {
+    type: 'DELETE_EVENT_SUCCESS',
+    id
+  }
+}

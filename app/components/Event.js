@@ -1,7 +1,8 @@
 import React, { PropTypes } from 'react'
 
-const Event = ({ name, dateBegin, dateEnd, description, tags, photo, food }) =>
+const Event = ({ name, dateBegin, dateEnd, description, tags, photo, food, handleDelete }) =>
   <div className='Event'>
+    <button className='delete-event' onClick={handleDelete}>Delete Event</button>
     <h3>{name}</h3>
     <div className='times'>
       <p>Begins: {dateBegin}</p>
@@ -30,7 +31,8 @@ const propTypes = {
   description: PropTypes.string.isRequired,
   tags: PropTypes.array,
   photo: PropTypes.string,
-  food: PropTypes.bool
+  food: PropTypes.bool,
+  handleDelete: PropTypes.func.isRequired
 }
 
 export default Object.assign(Event, { propTypes })

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import EventList from '../components/EventList'
+import EventList from './EventList'
 
 const getVisibleEvents = (events, filter) => {
   switch (filter.showOnlyFood) {
