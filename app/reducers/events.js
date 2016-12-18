@@ -27,6 +27,9 @@ const events = (state = [], action) => {
         ...state,
         event(undefined, action)
       ]
+    case 'DELETE_EVENT_SUCCESS':
+      // Remove a deleted event from the state to avoid re-getting all events.
+      return state.filter((event) => event._id !== action.id)
     default:
       return state
   }
