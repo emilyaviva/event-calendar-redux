@@ -52,6 +52,16 @@ app.delete('/calendar/:id', function (req, res) {
   })
 })
 
+app.put('/calendar/:id', function (req, res) {
+  db.collection('events').replaceOne({ _id: ObjectID(req.params.id) }, req.body, function (err, result) {
+    if (err) {
+      return console.error(err)
+    }
+    console.log('updated event id ' + req.params.id)
+    res.json({ success: true, _id: result.insertedId })
+  })
+})
+
 MongoClient.connect(mongoURI, function (err, database) {
   if (err) {
     return console.error(err)
